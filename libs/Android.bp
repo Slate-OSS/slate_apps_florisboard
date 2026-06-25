@@ -1,0 +1,93 @@
+/*
+ * Copyright (C) 2026 Slate. All Rights Reserved.
+ * PROPRIETARY AND CONFIDENTIAL.
+ */
+
+android_library_import {
+    name: "jetpref-material-ui",
+    aars: ["jetpref-material-ui-android-0.3.0.aar"],
+    sdk_version: "system_current",
+}
+
+android_library_import {
+    name: "jetpref-datastore-ui",
+    aars: ["jetpref-datastore-ui-android-0.3.0.aar"],
+    sdk_version: "system_current",
+}
+
+android_library_import {
+    name: "jetpref-datastore-model",
+    aars: ["jetpref-datastore-model-android-0.3.0.aar"],
+    sdk_version: "system_current",
+}
+
+android_library_import {
+    name: "material-kolor",
+    aars: ["material-kolor-android-5.0.0-alpha07.aar"],
+    sdk_version: "system_current",
+    static_libs: [
+        "colormath",
+        "androidx.compose.material3_material3",
+        "androidx.compose.runtime_runtime",
+    ],
+}
+
+android_library_import {
+    name: "coil-compose",
+    aars: ["coil-compose-2.7.0.aar"],
+    sdk_version: "system_current",
+    static_libs: ["coil-base"],
+}
+
+android_library_import {
+    name: "coil-base",
+    aars: ["coil-base-2.7.0.aar"],
+    sdk_version: "system_current",
+}
+
+android_library_import {
+    name: "aboutlibraries-compose",
+    aars: ["aboutlibraries-14.1.0-b01.aar"],
+    sdk_version: "system_current",
+    static_libs: [
+        "aboutlibraries-core",
+        "androidx.compose.material3_material3",
+    ],
+}
+
+java_import {
+    name: "aboutlibraries-core",
+    jars: ["aboutlibraries-core-14.1.0-b01.jar"],
+    sdk_version: "system_current",
+}
+
+java_import {
+    name: "cache4k",
+    jars: ["cache4k-jvm-0.14.0.jar"],
+    sdk_version: "system_current",
+}
+
+java_import {
+    name: "colormath",
+    jars: ["colormath-jvm-3.6.1.jar"],
+    sdk_version: "system_current",
+}
+
+java_import {
+    name: "okio-prebuilt",
+    jars: ["okio-jvm-3.17.0.jar"],
+    sdk_version: "system_current",
+}
+
+android_library_import {
+    name: "androidx.core_core-splashscreen",
+    aars: ["core-splashscreen-1.2.0.aar"],
+    sdk_version: "system_current",
+}
+
+android_library_import {
+    name: "androidx.emoji2_emoji2-views",
+    aars: ["emoji2-views-helper-1.6.0.aar"],
+    sdk_version: "system_current",
+}
+

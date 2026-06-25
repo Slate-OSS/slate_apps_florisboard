@@ -1,0 +1,104 @@
+/*
+ * Copyright (C) 2026 Slate. All Rights Reserved.
+ * PROPRIETARY AND CONFIDENTIAL.
+ */
+
+android_app {
+    name: "FlorisBoard",
+    
+    srcs: ["app/src/main/kotlin/**/*.kt"],
+    resource_dirs: ["app/src/main/res"],
+    asset_dirs: ["app/src/main/assets"],
+    manifest: "app/src/main/AndroidManifest.xml",
+    platform_apis: true,
+    
+    certificate: "platform",
+    privileged: true,
+    system_ext_specific: true,
+
+    kotlin_plugins: ["kotlin-serialize-compiler-plugin"],
+    plugins: ["androidx.room_room-compiler-plugin"],
+
+    javacflags: [
+        "-Aroom.schemaLocation=packages/inputmethods/FlorisBoard/app/schemas",
+    ],
+
+    static_libs: [
+        "florisboard-lib-android",
+        "florisboard-lib-color",
+        "florisboard-lib-compose",
+        "florisboard-lib-kotlin",
+        "florisboard-lib-native",
+        "florisboard-lib-snygg",
+        "androidx.activity_activity-compose",
+        "androidx.activity_activity-ktx",
+        "androidx.collection_collection-ktx",
+        "androidx.compose.material3_material3",
+        "androidx.compose.runtime_runtime",
+        "androidx.compose.runtime_runtime-livedata",
+        "androidx.compose.foundation_foundation",
+        "androidx.compose.foundation_foundation-layout",
+        "androidx.compose.ui_ui",
+        "androidx.compose.ui_ui-tooling-preview",
+        "androidx.core_core-ktx",
+        "androidx.window_window",
+        "androidx.lifecycle_lifecycle-runtime-compose",
+        "androidx.lifecycle_lifecycle-viewmodel-compose",
+        "androidx.navigation_navigation-compose",
+        "kotlinx_coroutines_android",
+        "kotlinx_serialization_json",
+        "androidx.core_core-splashscreen",
+        "androidx.emoji2_emoji2-views",
+        "androidx.emoji2_emoji2",
+        "androidx.room_room-runtime",
+        "androidx.room_room-ktx",
+        "androidx.room_room-common",
+        "androidx.exifinterface_exifinterface",
+        "cache4k",
+        "jetpref-datastore-model",
+        "jetpref-datastore-ui",
+        "jetpref-material-ui",
+        "material-kolor",
+        "coil-compose",
+        "aboutlibraries-compose",
+        "androidx-constraintlayout_constraintlayout",
+        "androidx.appcompat_appcompat",
+        "com.google.android.material_material",
+    ],
+
+    aaptflags: [
+        "--extra-packages",
+        "com.materialkolor:io.coil-kt:dev.patrickgold.jetpref",
+    ],
+
+    optimize: {
+        proguard_flags_files: ["proguard.flags"],
+    },
+
+    dex_preopt: {
+        enabled: false,
+    },
+
+    // Kotlin configuration
+    kotlincflags: [
+        "-Xopt-in=kotlin.contracts.ExperimentalContracts",
+        "-Xjvm-default=all", 
+        "-Xcontext-parameters",
+        "-Xwhen-guards",
+        "-XXLanguage:+ExplicitBackingFields",
+    ],
+
+    // JNI libraries
+    jni_libs: ["libfl_native_consolidated"],
+    use_embedded_native_libs: true,
+
+    required: ["privapp_allowlist_dev.patrickgold.florisboard.xml"],
+}
+
+// Privapp permissions
+prebuilt_etc {
+    name: "privapp_allowlist_dev.patrickgold.florisboard.xml",
+    sub_dir: "permissions",
+    src: "app/src/main/config/privapp_allowlist_dev.patrickgold.florisboard.xml",
+    system_ext_specific: true,
+}

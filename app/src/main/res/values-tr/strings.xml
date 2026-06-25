@@ -355,12 +355,12 @@
     <string name="snygg__property_value__rectangle_shape">Dikdörtgen şekli</string>
     <string name="snygg__property_value__circle_shape">Daire şekli</string>
     <string name="snygg__property_value__cut_corner_shape_dp">Kesik köşe şekli (dp)</string>
-    <string name="snygg__property_value__cut_corner_shape_percent">Kesik köşe şekli (%)</string>
+    <string name="snygg__property_value__cut_corner_shape_percent" formatted="false">Kesik köşe şekli (%)</string>
     <string name="snygg__property_value__rounded_corner_shape_dp">Yuvarlak köşe şekli (dp)</string>
-    <string name="snygg__property_value__rounded_corner_shape_percent">Yuvarlak köşe şekli (%)</string>
+    <string name="snygg__property_value__rounded_corner_shape_percent" formatted="false">Yuvarlak köşe şekli (%)</string>
     <string name="snygg__property_value__dp_size">Boyut (dp)</string>
     <string name="snygg__property_value__sp_size">Boyut (sp)</string>
-    <string name="snygg__property_value__percentage_size">Boyut (%)</string>
+    <string name="snygg__property_value__percentage_size" formatted="false">Boyut (%)</string>
     <string name="snygg__property_value__content_scale">İçerik ölçeği</string>
     <string name="snygg__property_value__text_align">Metin hizalama</string>
     <string name="snygg__property_value__text_decoration_line">Metin dekorasyon çizgisi</string>
@@ -782,7 +782,7 @@
     <string name="ext__validation__enter_positive_number">Lütfen pozitif bir sayı girin (&gt;=0)</string>
     <string name="ext__validation__enter_percent_size">Lütfen bir yüzde boyutu girin</string>
     <string name="ext__validation__enter_number_between_0_100">Lütfen 0 ile 100 arasında pozitif bir sayı girin</string>
-    <string name="ext__validation__hint_value_above_50_percent">%50\'nin üzerindeki herhangi bir değer %50 olarak ayarlanmış gibi davranacaktır, yüzde boyutunuzu düşürmeyi düşünün</string>
+    <string name="ext__validation__hint_value_above_50_percent" formatted="false">%50\'nin üzerindeki herhangi bir değer %50 olarak ayarlanmış gibi davranacaktır, yüzde boyutunuzu düşürmeyi düşünün</string>
     <string name="ext__update_box__internet_permission_hint">Bu uygulama İnternet iznine sahip olmadığı için, yüklü eklentilerin güncellemeleri manuel olarak kontrol edilmelidir.</string>
     <string name="ext__update_box__search_for_updates">Güncellemeleri Ara</string>
     <string name="ext__addon_management_box__managing_placeholder">{extensions} Yönetiliyor</string>

@@ -280,12 +280,12 @@
     <string name="snygg__property_value__rectangle_shape">Rechteckform</string>
     <string name="snygg__property_value__circle_shape">Kreisform</string>
     <string name="snygg__property_value__cut_corner_shape_dp">Form mit eckigen Ecken (dp)</string>
-    <string name="snygg__property_value__cut_corner_shape_percent">Form mit eckigen Ecken (%)</string>
+    <string name="snygg__property_value__cut_corner_shape_percent" formatted="false">Form mit eckigen Ecken (%)</string>
     <string name="snygg__property_value__rounded_corner_shape_dp">Form mit abgerundeten Ecken (dp)</string>
-    <string name="snygg__property_value__rounded_corner_shape_percent">Form mit abgerundeten Ecken (%)</string>
+    <string name="snygg__property_value__rounded_corner_shape_percent" formatted="false">Form mit abgerundeten Ecken (%)</string>
     <string name="snygg__property_value__dp_size">Größe (dp)</string>
     <string name="snygg__property_value__sp_size">Größe (sp)</string>
-    <string name="snygg__property_value__percentage_size">Größe (%)</string>
+    <string name="snygg__property_value__percentage_size" formatted="false">Größe (%)</string>
     <string name="settings__input_feedback__title" comment="Title of Input Feedback screen">Ton &amp; Vibration</string>
     <string name="pref__input_feedback__group_audio__label" comment="Preference group title">Ton Rückmeldung / Klänge</string>
     <string name="pref__input_feedback__audio_enabled__label" comment="Preference title">Ton Rückmeldung aktivieren</string>
@@ -688,7 +688,7 @@
     <string name="ext__validation__enter_positive_number">Bitte gib eine positive Zahl ein (&gt;=0)</string>
     <string name="ext__validation__enter_percent_size">Bitte gib eine Prozentzahl an</string>
     <string name="ext__validation__enter_number_between_0_100">Bitte gib eine positive Zahl zwischen 0 und 100 an</string>
-    <string name="ext__validation__hint_value_above_50_percent">Jeder Wert über 50 % verhält sich so, als ob 50 % eingestellt wären. Überlege den Wert zu senken</string>
+    <string name="ext__validation__hint_value_above_50_percent" formatted="false">Jeder Wert über 50 % verhält sich so, als ob 50 % eingestellt wären. Überlege den Wert zu senken</string>
     <string name="ext__update_box__internet_permission_hint">Weil diese App keine Internetberechtigungen hat, muss manuell nach Updates für Erweiterungen gesucht werden.</string>
     <string name="ext__update_box__search_for_updates">Nach Updates suchen</string>
     <string name="ext__addon_management_box__managing_placeholder">Verwalte {extensions}</string>

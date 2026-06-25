@@ -274,12 +274,12 @@
     <string name="snygg__property_value__rectangle_shape">Forma rettangolare</string>
     <string name="snygg__property_value__circle_shape">Forma di cerchio</string>
     <string name="snygg__property_value__cut_corner_shape_dp">Forma tagliata nell\'angolo (dp)</string>
-    <string name="snygg__property_value__cut_corner_shape_percent">Forma tagliata nell\'angolo (%)</string>
+    <string name="snygg__property_value__cut_corner_shape_percent" formatted="false">Forma tagliata nell\'angolo (%)</string>
     <string name="snygg__property_value__rounded_corner_shape_dp">Forma arrotondata nell\'angolo (dp)</string>
-    <string name="snygg__property_value__rounded_corner_shape_percent">Forma arrotondata nell\'angolo (%)</string>
+    <string name="snygg__property_value__rounded_corner_shape_percent" formatted="false">Forma arrotondata nell\'angolo (%)</string>
     <string name="snygg__property_value__dp_size">Dimensione (dp)</string>
     <string name="snygg__property_value__sp_size">Dimensione (sp)</string>
-    <string name="snygg__property_value__percentage_size">Dimensione (%)</string>
+    <string name="snygg__property_value__percentage_size" formatted="false">Dimensione (%)</string>
     <string name="settings__input_feedback__title" comment="Title of Input Feedback screen">Suoni &amp; Vibrazione</string>
     <string name="pref__input_feedback__group_audio__label" comment="Preference group title">Feedback audio / Suoni</string>
     <string name="pref__input_feedback__audio_enabled__label" comment="Preference title">Attiva feedback audio</string>
@@ -638,7 +638,7 @@
     <string name="ext__validation__enter_maintainer">Inserisci un indirzzo e-mail valido</string>
     <string name="ext__validation__enter_license">Inserisci un ID per la licenza</string>
     <string name="ext__validation__enter_component_id">Inserisci l\'ID corretto</string>
-    <string name="ext__validation__hint_value_above_50_percent">Qualsiasi valore superiore al 50% si comporterà come se impostassi il 50%, prendi in considerazione di ridurre la dimensione percentuale</string>
+    <string name="ext__validation__hint_value_above_50_percent" formatted="false">Qualsiasi valore superiore al 50% si comporterà come se impostassi il 50%, prendi in considerazione di ridurre la dimensione percentuale</string>
     <string name="ext__addon_management_box__addon_manager_info">Tutte le attività relative all\'importazione, all\'esportazione, alla creazione, alla personalizzazione e alla rimozione delle estensioni possono essere gestite tramite il gestore interno</string>
     <string name="ext__home__info">Puoi scaricare e installare estensioni dallo Store di FlorisBoard o importare qualsiasi addon</string>
     <string name="ext__home__visit_store">Vai allo Store degli addons</string>

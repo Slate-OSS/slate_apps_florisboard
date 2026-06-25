@@ -1,0 +1,26 @@
+/*
+ * Copyright (C) 2026 Slate. All Rights Reserved.
+ * PROPRIETARY AND CONFIDENTIAL.
+ */
+
+android_library {
+    name: "florisboard-lib-compose",
+    srcs: ["src/main/kotlin/**/*.kt"],
+    manifest: "src/main/AndroidManifest.xml",
+    static_libs: [
+        "florisboard-lib-android",
+        "florisboard-lib-color",
+        "florisboard-lib-kotlin",
+        "androidx.compose.material3_material3",
+        "androidx.compose.runtime_runtime",
+        "androidx.compose.ui_ui",
+        "androidx.compose.material_material-icons-extended",
+        "kotlinx_serialization_json",
+        "jetpref-material-ui",
+    ],
+    kotlin_plugins: ["kotlin-serialize-compiler-plugin"],
+    kotlincflags: [
+        "-Xcontext-parameters",
+    ],
+    sdk_version: "system_current",
+}

@@ -22,6 +22,7 @@ import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.displayCutoutPadding
 import androidx.compose.foundation.layout.imePadding
@@ -35,6 +36,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.staticCompositionLocalOf
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -49,6 +51,7 @@ import dev.patrickgold.florisboard.app.setup.NotificationPermissionState
 import dev.patrickgold.florisboard.appContext
 import dev.patrickgold.florisboard.cacheManager
 import dev.patrickgold.florisboard.lib.FlorisLocale
+import dev.patrickgold.florisboard.lib.cache.CacheManager
 import dev.patrickgold.florisboard.lib.compose.LocalPreviewFieldController
 import dev.patrickgold.florisboard.lib.compose.PreviewKeyboardField
 import dev.patrickgold.florisboard.lib.compose.rememberPreviewFieldController
@@ -127,7 +130,13 @@ class FlorisAppActivity : ComponentActivity() {
                 ) {
                     FlorisAppTheme(theme = appTheme) {
                         Surface(color = MaterialTheme.colorScheme.background) {
-                            AppContent()
+                            FlorisAppContent(
+                                resourcesContext = resourcesContext,
+                                prefs = prefs,
+                                cacheManager = cacheManager,
+                                intentToBeHandled = intentToBeHandled,
+                                onIntentHandled = { intentToBeHandled = null },
+                            )
                         }
                     }
                 }
@@ -169,57 +178,68 @@ class FlorisAppActivity : ComponentActivity() {
         intentToBeHandled = null
     }
 
-    @Composable
-    private fun AppContent() {
-        val navController = rememberNavController()
-        val previewFieldController = rememberPreviewFieldController()
+}
 
-        val isImeSetUp by prefs.internal.isImeSetUp.collectAsState()
+@Composable
+internal fun FlorisAppContent(
+    resourcesContext: Context,
+    prefs: FlorisPreferenceModel,
+    cacheManager: CacheManager,
+    intentToBeHandled: Intent?,
+    onIntentHandled: () -> Unit,
+) {
+    val configuration = resourcesContext.resources.configuration
+    val navController = rememberNavController()
+    val previewFieldController = rememberPreviewFieldController()
 
-        CompositionLocalProvider(
-            LocalNavController provides navController,
-            LocalPreviewFieldController provides previewFieldController,
+    val isImeSetUp by prefs.internal.isImeSetUp.collectAsState()
+
+    val okLabel = resourcesContext.getString(R.string.action__ok)
+    val cancelLabel = resourcesContext.getString(R.string.action__cancel)
+    val defaultLabel = resourcesContext.getString(R.string.action__default)
+
+    CompositionLocalProvider(
+        LocalNavController provides navController,
+        LocalPreviewFieldController provides previewFieldController,
+    ) {
+        ProvideDefaultDialogPrefStrings(
+            confirmLabel = okLabel,
+            dismissLabel = cancelLabel,
+            neutralLabel = defaultLabel,
         ) {
-            ProvideDefaultDialogPrefStrings(
-                confirmLabel = stringRes(R.string.action__ok),
-                dismissLabel = stringRes(R.string.action__cancel),
-                neutralLabel = stringRes(R.string.action__default),
-            ) {
-                Column(
-                    modifier = Modifier
-                        //.statusBarsPadding()
-                        .navigationBarsPadding()
-                        .conditional(LocalConfiguration.current.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                            displayCutoutPadding()
-                        }
-                        .imePadding(),
-                ) {
-                    Routes.AppNavHost(
-                        modifier = Modifier.weight(1.0f),
-                        navController = navController,
-                        startDestination = if (isImeSetUp) Routes.Settings.Home::class else Routes.Setup.Screen::class,
-                    )
-                    PreviewKeyboardField(previewFieldController)
-                }
+            val isLandscape = configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
+            var modifier = Modifier
+                .navigationBarsPadding()
+            if (isLandscape) {
+                modifier = modifier.displayCutoutPadding()
             }
-        }
+            modifier = modifier.imePadding()
 
-        LaunchedEffect(intentToBeHandled) {
-            val intent = intentToBeHandled
-            if (intent != null) {
-                if (intent.action == Intent.ACTION_VIEW && intent.categories?.contains(Intent.CATEGORY_BROWSABLE) == true) {
-                    navController.handleDeepLink(intent)
-                } else {
-                    val data = if (intent.action == Intent.ACTION_VIEW) {
-                        intent.data!!
-                    } else {
-                        intent.clipData!!.getItemAt(0).uri
-                    }
-                    val workspace = runCatching { cacheManager.readFromUriIntoCache(data) }.getOrNull()
-                    navController.navigate(Routes.Ext.Import(ExtensionImportScreenType.EXT_ANY, workspace?.uuid))
-                }
-            }
-            intentToBeHandled = null
+            FlorisAppMainLayout(
+                modifier = modifier,
+                isImeSetUp = isImeSetUp,
+                navController = navController,
+                previewFieldController = previewFieldController,
+            )
         }
     }
+
+    LaunchedEffect(intentToBeHandled) {
+        val intent = intentToBeHandled
+        if (intent != null) {
+            if (intent.action == Intent.ACTION_VIEW && intent.categories?.contains(Intent.CATEGORY_BROWSABLE) == true) {
+                navController.handleDeepLink(intent)
+            } else {
+                val data = if (intent.action == Intent.ACTION_VIEW) {
+                    intent.data!!
+                } else {
+                    intent.clipData!!.getItemAt(0).uri
+                }
+                val workspace = runCatching { cacheManager.readFromUriIntoCache(data) }.getOrNull()
+                navController.navigate(Routes.Ext.Import(ExtensionImportScreenType.EXT_ANY, workspace?.uuid))
+            }
+        }
+        onIntentHandled()
+    }
 }
+

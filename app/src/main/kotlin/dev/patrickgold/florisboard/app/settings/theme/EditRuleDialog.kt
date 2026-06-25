@@ -396,9 +396,10 @@ private fun EditCodeValueDialog(
 
     var isRecordingKey by remember { mutableStateOf(false) }
     var lastRecordingToast by remember { mutableStateOf<Toast?>(null) }
+    val contentColor = LocalContentColor.current
     val recordingKeyColor = if (isRecordingKey) {
         rememberInfiniteTransition().animateColor(
-            initialValue = LocalContentColor.current,
+            initialValue = contentColor,
             targetValue = MaterialTheme.colorScheme.error,
             animationSpec = infiniteRepeatable(
                 tween(750),
@@ -406,7 +407,7 @@ private fun EditCodeValueDialog(
             ),
         ).value
     } else {
-        LocalContentColor.current
+        contentColor
     }
 
     fun requestStartRecording() {
@@ -536,10 +537,11 @@ private fun EditCodeValueDialog(
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
+                val currentTextSelectionColors = LocalTextSelectionColors.current
                 val textSelectionColors = if (isRecordingKey) {
                     TransparentTextSelectionColors
                 } else {
-                    LocalTextSelectionColors.current
+                    currentTextSelectionColors
                 }
                 CompositionLocalProvider(LocalTextSelectionColors provides textSelectionColors) {
                     JetPrefTextField(

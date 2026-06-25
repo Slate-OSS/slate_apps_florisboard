@@ -209,7 +209,7 @@
     <string name="snygg__property_value__material_you_dark_color">Material You 색상(다크)</string>
     <string name="snygg__property_value__dp_size">크기(dp)</string>
     <string name="snygg__property_value__sp_size">크기(sp)</string>
-    <string name="snygg__property_value__percentage_size">크기(%)</string>
+    <string name="snygg__property_value__percentage_size" formatted="false">크기(%)</string>
     <string name="settings__input_feedback__title" comment="Title of Input Feedback screen">소리 및 진동</string>
     <string name="pref__input_feedback__group_audio__label" comment="Preference group title">오디오 피드백 / 소리</string>
     <string name="pref__input_feedback__audio_enabled__label" comment="Preference title">오디오 피드백 사용</string>

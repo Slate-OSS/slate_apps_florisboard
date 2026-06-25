@@ -1,0 +1,13 @@
+# Proguard rules for FlorisBoard in AOSP 16
+
+# Keep external libraries intact
+-keep class io.coil.** { *; }
+-keep class com.materialkolor.** { *; }
+-keep class dev.patrickgold.jetpref.** { *; }
+-keep class io.github.reactivecircus.cache4k.** { *; }
+
+# Keep Compose-specific internal signatures
+-keepclassmembers class * extends androidx.compose.runtime.RecomposeScope { *; }
+
+# General Room/KSP keeps if needed
+-keep class * extends androidx.room.RoomDatabase { *; }

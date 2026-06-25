@@ -1,0 +1,24 @@
+/*
+ * Copyright (C) 2026 Slate. All Rights Reserved.
+ * PROPRIETARY AND CONFIDENTIAL.
+ */
+
+android_library {
+    name: "florisboard-lib-snygg",
+    srcs: ["src/main/kotlin/**/*.kt"],
+    manifest: "src/main/AndroidManifest.xml",
+    static_libs: [
+        "florisboard-lib-android",
+        "florisboard-lib-color",
+        "florisboard-lib-kotlin",
+        "androidx.compose.material3_material3",
+        "androidx.compose.runtime_runtime",
+        "androidx.compose.ui_ui",
+        "androidx.compose.material_material-icons-extended",
+        "androidx.compose.ui_ui-tooling-preview",
+        "kotlinx_serialization_json",
+        "coil-compose",
+    ],
+    kotlin_plugins: ["kotlin-serialize-compiler-plugin"],
+    sdk_version: "system_current",
+}

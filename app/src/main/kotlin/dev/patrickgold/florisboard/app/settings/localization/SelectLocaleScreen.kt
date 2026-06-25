@@ -113,6 +113,7 @@ fun SelectLocaleScreen() = FlorisScreen {
                 ),
             )
             if (filteredSystemLocales.isEmpty()) {
+                val color = LocalContentColor.current.copy(alpha = 0.54f)
                 Text(
                     modifier = Modifier
                         .padding(16.dp)
@@ -121,7 +122,7 @@ fun SelectLocaleScreen() = FlorisScreen {
                         R.string.settings__localization__subtype_search_locale_not_found,
                         "search_term" to searchTermValue.text,
                     ),
-                    color = LocalContentColor.current.copy(alpha = 0.54f),
+                    color = color,
                 )
             }
             LazyColumn(

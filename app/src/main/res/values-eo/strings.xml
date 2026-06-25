@@ -210,12 +210,12 @@
     <string name="snygg__property_value__rectangle_shape">Ortangula formo</string>
     <string name="snygg__property_value__circle_shape">Cirkla formo</string>
     <string name="snygg__property_value__cut_corner_shape_dp">Tondita angula formo (dp)</string>
-    <string name="snygg__property_value__cut_corner_shape_percent">Tondita angula formo (%)</string>
+    <string name="snygg__property_value__cut_corner_shape_percent" formatted="false">Tondita angula formo (%)</string>
     <string name="snygg__property_value__rounded_corner_shape_dp">Rondigita angula formo (dp)</string>
-    <string name="snygg__property_value__rounded_corner_shape_percent">Rondigita angula formo (%)</string>
+    <string name="snygg__property_value__rounded_corner_shape_percent" formatted="false">Rondigita angula formo (%)</string>
     <string name="snygg__property_value__dp_size">Grando (dp)</string>
     <string name="snygg__property_value__sp_size">Grando (sp)</string>
-    <string name="snygg__property_value__percentage_size">Grando (%)</string>
+    <string name="snygg__property_value__percentage_size" formatted="false">Grando (%)</string>
     <string name="settings__input_feedback__title" comment="Title of Input Feedback screen">Sonoj &amp; Vibradoj</string>
     <string name="pref__input_feedback__group_audio__label" comment="Preference group title">Sona retrokuplo / Sonoj</string>
     <string name="pref__input_feedback__audio_enabled__label" comment="Preference title">Ŝalti sonan retrokuplon</string>

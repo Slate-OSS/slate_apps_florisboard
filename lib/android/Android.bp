@@ -1,0 +1,21 @@
+/*
+ * Copyright (C) 2026 Slate. All Rights Reserved.
+ * PROPRIETARY AND CONFIDENTIAL.
+ */
+
+android_library {
+    name: "florisboard-lib-android",
+    srcs: ["src/main/kotlin/**/*.kt"],
+    manifest: "src/main/AndroidManifest.xml",
+    resource_dirs: [],
+    static_libs: [
+        "florisboard-lib-kotlin",
+        "androidx.core_core-ktx",
+        "kotlinx_serialization_json",
+    ],
+    kotlin_plugins: ["kotlin-serialize-compiler-plugin"],
+    sdk_version: "system_current",
+    kotlincflags: [
+        "-Xopt-in=kotlin.contracts.ExperimentalContracts",
+    ],
+}

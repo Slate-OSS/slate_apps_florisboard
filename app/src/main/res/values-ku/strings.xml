@@ -123,7 +123,7 @@
     <string name="snygg__property_value__solid_color">Rengê tarî</string>
     <string name="snygg__property_value__dp_size">Mezinahî (dp)</string>
     <string name="snygg__property_value__sp_size">Mezinahî (sp)</string>
-    <string name="snygg__property_value__percentage_size">Mezinahî (%)</string>
+    <string name="snygg__property_value__percentage_size" formatted="false">Mezinahî (%)</string>
     <string name="settings__input_feedback__title" comment="Title of Input Feedback screen">Deng &amp; Vibrasyon</string>
     <string name="pref__input_feedback__group_audio__label" comment="Preference group title">Dengvedan / Deng</string>
     <string name="pref__input_feedback__audio_enabled__label" comment="Preference title">Paşvegerên deng çalak bike</string>

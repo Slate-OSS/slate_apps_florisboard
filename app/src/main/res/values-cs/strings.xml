@@ -363,12 +363,12 @@
     <string name="snygg__property_value__rectangle_shape">Obdélníkový tvar</string>
     <string name="snygg__property_value__circle_shape">Kruhový tvar</string>
     <string name="snygg__property_value__cut_corner_shape_dp">Tvar ořezaného rohu (dp)</string>
-    <string name="snygg__property_value__cut_corner_shape_percent">Tvar ořezaného rohu (%)</string>
+    <string name="snygg__property_value__cut_corner_shape_percent" formatted="false">Tvar ořezaného rohu (%)</string>
     <string name="snygg__property_value__rounded_corner_shape_dp">Zaoblený tvar rohu (dp)</string>
-    <string name="snygg__property_value__rounded_corner_shape_percent">Zaoblený tvar rohu (%)</string>
+    <string name="snygg__property_value__rounded_corner_shape_percent" formatted="false">Zaoblený tvar rohu (%)</string>
     <string name="snygg__property_value__dp_size">Velikost (dp)</string>
     <string name="snygg__property_value__sp_size">Velikost (sp)</string>
-    <string name="snygg__property_value__percentage_size">Velikost (%)</string>
+    <string name="snygg__property_value__percentage_size" formatted="false">Velikost (%)</string>
     <string name="snygg__property_value__content_scale">Škálování obashu</string>
     <string name="snygg__property_value__text_align">Zarovnání textu</string>
     <string name="snygg__property_value__text_decoration_line">Linka dekorace textu</string>
@@ -802,7 +802,7 @@
     <string name="ext__validation__enter_positive_number">Zadejte prosím kladné číslo (&gt;=0)</string>
     <string name="ext__validation__enter_percent_size">Zadejte prosím velikost v procentech</string>
     <string name="ext__validation__enter_number_between_0_100">Zadejte prosím kladné číslo mezi 0 a 100</string>
-    <string name="ext__validation__hint_value_above_50_percent">Jakákoli hodnota nad 50 % se bude chovat, jako kdybyste nastavili 50 %, zvažte snížení velikosti v procentech</string>
+    <string name="ext__validation__hint_value_above_50_percent" formatted="false">Jakákoli hodnota nad 50 % se bude chovat, jako kdybyste nastavili 50 %, zvažte snížení velikosti v procentech</string>
     <string name="ext__update_box__internet_permission_hint">Jelikož tato aplikace nemá přístup k internetu, musíte aktualizace nainstalovaných rozšíření kontrolovat ručně.</string>
     <string name="ext__update_box__search_for_updates">Vyhledat aktualizace</string>
     <string name="ext__addon_management_box__managing_placeholder">Správa {extensions}</string>

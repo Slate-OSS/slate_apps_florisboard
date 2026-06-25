@@ -63,8 +63,9 @@ class FlorisApplication : Application() {
     companion object {
         init {
             try {
-                System.loadLibrary("fl_native")
-            } catch (_: Exception) {
+                System.loadLibrary("fl_native_consolidated")
+            } catch (e: Throwable) {
+                android.util.Log.e("FlorisBoard", "Failed to load native library fl_native_consolidated", e)
             }
         }
     }
@@ -85,18 +86,24 @@ class FlorisApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        android.util.Log.e("FlorisBoard", "onCreate() started")
         FlorisApplicationReference = WeakReference(this)
         try {
+            android.util.Log.e("FlorisBoard", "Installing Flog")
             Flog.install(
                 context = this,
-                isFloggingEnabled = BuildConfig.DEBUG,
+                isFloggingEnabled = true, // Force enabled for debugging
                 flogTopics = LogTopic.ALL,
                 flogLevels = Flog.LEVEL_ALL,
                 flogOutputs = Flog.OUTPUT_CONSOLE,
             )
+            android.util.Log.e("FlorisBoard", "Installing CrashUtility")
             CrashUtility.install(this)
+            android.util.Log.e("FlorisBoard", "Initializing EmojiCompat")
             FlorisEmojiCompat.init(this)
-            flogError { "dummy result: ${dummyAdd(3,4)}" }
+            android.util.Log.e("FlorisBoard", "Calling dummyAdd(3, 4)")
+            val result = dummyAdd(3, 4)
+            android.util.Log.e("FlorisBoard", "dummy result: $result")
 
             if (!UserManagerCompat.isUserUnlocked(this)) {
                 cacheDir?.deleteContentsRecursively()

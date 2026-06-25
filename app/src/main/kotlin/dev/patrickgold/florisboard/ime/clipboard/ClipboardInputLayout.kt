@@ -85,6 +85,7 @@ import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
@@ -111,6 +112,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.florisboard.lib.android.AndroidKeyguardManager
 import org.florisboard.lib.android.AndroidVersion
+import org.florisboard.lib.android.isOrientationPortrait
 import org.florisboard.lib.android.showShortToastSync
 import org.florisboard.lib.android.systemService
 import org.florisboard.lib.compose.LocalLocalizedDateTimeFormatter
@@ -370,7 +372,13 @@ fun ClipboardInputLayout(
             modifier = Modifier.fillMaxSize(),
         ) {
             val historyAlpha by animateFloatAsState(targetValue = if (isPopupSurfaceActive()) 0.12f else 1f)
-            val staggeredGridCells by prefs.clipboard.historyNumGridColumns()
+            val configuration = LocalConfiguration.current
+            val historyNumGridColumnsPref = if (configuration.isOrientationPortrait()) {
+                prefs.clipboard.historyNumGridColumnsPortrait
+            } else {
+                prefs.clipboard.historyNumGridColumnsLandscape
+            }
+            val staggeredGridCells by historyNumGridColumnsPref
                 .observeAsTransformingState { numGridColumns ->
                     if (numGridColumns == CLIPBOARD_HISTORY_NUM_GRID_COLUMNS_AUTO) {
                         StaggeredGridCells.Adaptive(160.dp)

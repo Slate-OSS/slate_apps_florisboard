@@ -773,10 +773,11 @@ private fun SnyggRuleRow(
 
     @Composable
     fun AttributesList(text: String, list: String) {
+        val color = LocalContentColor.current.copy(alpha = 0.56f)
         Text(
             text = "$text = $list",
             style = MaterialTheme.typography.bodyMedium,
-            color = LocalContentColor.current.copy(alpha = 0.56f),
+            color = color,
             fontFamily = FontFamily.Monospace,
             overflow = TextOverflow.Ellipsis,
         )

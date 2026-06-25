@@ -397,12 +397,12 @@
     <string name="snygg__property_value__rectangle_shape">Rectangle shape</string>
     <string name="snygg__property_value__circle_shape">Circle shape</string>
     <string name="snygg__property_value__cut_corner_shape_dp">Cut corner shape (dp)</string>
-    <string name="snygg__property_value__cut_corner_shape_percent">Cut corner shape (%)</string>
+    <string name="snygg__property_value__cut_corner_shape_percent" formatted="false">Cut corner shape (%)</string>
     <string name="snygg__property_value__rounded_corner_shape_dp">Rounded corner shape (dp)</string>
-    <string name="snygg__property_value__rounded_corner_shape_percent">Rounded corner shape (%)</string>
+    <string name="snygg__property_value__rounded_corner_shape_percent" formatted="false">Rounded corner shape (%)</string>
     <string name="snygg__property_value__dp_size">Size (dp)</string>
     <string name="snygg__property_value__sp_size">Size (sp)</string>
-    <string name="snygg__property_value__percentage_size">Size (%)</string>
+    <string name="snygg__property_value__percentage_size" formatted="false">Size (%)</string>
     <string name="snygg__property_value__content_scale">Content scale</string>
     <string name="snygg__property_value__text_align">Text align</string>
     <string name="snygg__property_value__text_decoration_line">Text decoration line</string>
@@ -864,7 +864,7 @@
     <string name="ext__validation__enter_positive_number">Please enter a positive number (>=0)</string>
     <string name="ext__validation__enter_percent_size">Please enter a percent size</string>
     <string name="ext__validation__enter_number_between_0_100">Please enter a positive number between 0 and 100</string>
-    <string name="ext__validation__hint_value_above_50_percent">Any value above 50% will behave as if you set 50%, consider lowering your percent size</string>
+    <string name="ext__validation__hint_value_above_50_percent" formatted="false">Any value above 50% will behave as if you set 50%, consider lowering your percent size</string>
     <string name="ext__update_box__internet_permission_hint">Since this app does not have Internet permission, updates for installed extensions must be checked manually.</string>
     <string name="ext__update_box__search_for_updates">Search for Updates</string>
     <string name="ext__addon_management_box__managing_placeholder">Managing {extensions}</string>

@@ -19,17 +19,17 @@ package dev.patrickgold.florisboard.app.settings.about
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import com.mikepenz.aboutlibraries.ui.compose.LibraryDefaults
-import com.mikepenz.aboutlibraries.ui.compose.android.produceLibraries
-import com.mikepenz.aboutlibraries.ui.compose.m3.LibrariesContainer
-import com.mikepenz.aboutlibraries.ui.compose.m3.chipColors
-import com.mikepenz.aboutlibraries.ui.compose.m3.libraryColors
+// import com.mikepenz.aboutlibraries.ui.compose.LibraryDefaults
+// import com.mikepenz.aboutlibraries.ui.compose.android.produceLibraries
+// import com.mikepenz.aboutlibraries.ui.compose.m3.LibrariesContainer
+// import com.mikepenz.aboutlibraries.ui.compose.m3.chipColors
+// import com.mikepenz.aboutlibraries.ui.compose.m3.libraryColors
 import dev.patrickgold.florisboard.R
 import dev.patrickgold.florisboard.lib.compose.FlorisScreen
-import org.florisboard.lib.compose.florisScrollbar
 import org.florisboard.lib.compose.stringRes
 
 @Composable
@@ -38,10 +38,11 @@ fun ThirdPartyLicensesScreen() = FlorisScreen {
     scrollable = false
     iconSpaceReserved = false
 
-    val lazyListState = rememberLazyListState()
-    val libs by produceLibraries()
+    // val lazyListState = rememberLazyListState()
+    // val libs by produceLibraries()
 
     content {
+        /*
         LibrariesContainer(
             libraries = libs,
             modifier = Modifier
@@ -58,5 +59,7 @@ fun ThirdPartyLicensesScreen() = FlorisScreen {
             ),
             lazyListState = lazyListState,
         )
+        */
+        Text("Third party licenses are currently unavailable in this build.")
     }
 }

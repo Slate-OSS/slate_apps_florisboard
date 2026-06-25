@@ -240,12 +240,12 @@
     <string name="snygg__property_value__rectangle_shape">چوارگۆشەیی</string>
     <string name="snygg__property_value__circle_shape">بازنەیی</string>
     <string name="snygg__property_value__cut_corner_shape_dp">گۆشە چوارگۆشەیی (dp)</string>
-    <string name="snygg__property_value__cut_corner_shape_percent">گۆشە چوارگۆشەیی (٪)</string>
+    <string name="snygg__property_value__cut_corner_shape_percent" formatted="false">گۆشە چوارگۆشەیی (٪)</string>
     <string name="snygg__property_value__rounded_corner_shape_dp">گۆشە بازنەیی (dp)</string>
-    <string name="snygg__property_value__rounded_corner_shape_percent">گۆشە بازنەیی (٪)</string>
+    <string name="snygg__property_value__rounded_corner_shape_percent" formatted="false">گۆشە بازنەیی (٪)</string>
     <string name="snygg__property_value__dp_size">قەبارە (dp)</string>
     <string name="snygg__property_value__sp_size">قەبارە (sp)</string>
-    <string name="snygg__property_value__percentage_size">قەبارە (٪)</string>
+    <string name="snygg__property_value__percentage_size" formatted="false">قەبارە (٪)</string>
     <string name="settings__input_feedback__title" comment="Title of Input Feedback screen">ڕێکخستنی دەنگ و لەرزین</string>
     <string name="pref__input_feedback__group_audio__label" comment="Preference group title">کاریگەری دەنگ / دەستلێدان</string>
     <string name="pref__input_feedback__audio_enabled__label" comment="Preference title">چالاککردنی کاریگەری دەنگی</string>

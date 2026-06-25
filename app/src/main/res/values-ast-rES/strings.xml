@@ -101,7 +101,7 @@
     <string name="snygg__property_name__var_secondary">Color secundariu</string>
     <string name="snygg__property_value__rectangle_shape">Forma rectangular</string>
     <string name="snygg__property_value__circle_shape">Forma circular</string>
-    <string name="snygg__property_value__percentage_size">Tamañu (%)</string>
+    <string name="snygg__property_value__percentage_size" formatted="false">Tamañu (%)</string>
     <string name="settings__input_feedback__title" comment="Title of Input Feedback screen">Soníos y vibración</string>
     <string name="pref__input_feedback__group_audio__label" comment="Preference group title">Rempuesta auditiva / Soníos</string>
     <string name="pref__input_feedback__audio_enabled__label" comment="Preference title">Activar la rempuesta auditiva</string>

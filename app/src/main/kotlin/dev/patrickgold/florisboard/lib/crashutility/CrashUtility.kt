@@ -372,6 +372,7 @@ abstract class CrashUtility private constructor() {
         private val ustDir: FsDir,
     ) : Thread.UncaughtExceptionHandler {
         override fun uncaughtException(thread: Thread, throwable: Throwable) {
+            android.util.Log.e("FlorisBoard", "FATAL EXCEPTION in thread ${thread.name}", throwable)
             flogInfo(LogTopic.CRASH_UTILITY) {
                 "Detected application crash, executing custom crash handler."
             }

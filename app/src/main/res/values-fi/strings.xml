@@ -125,7 +125,7 @@
     <string name="snygg__property_value__solid_color">Tasainen väri</string>
     <string name="snygg__property_value__dp_size">Koko (dp)</string>
     <string name="snygg__property_value__sp_size">Koko (sp)</string>
-    <string name="snygg__property_value__percentage_size">Koko (%)</string>
+    <string name="snygg__property_value__percentage_size" formatted="false">Koko (%)</string>
     <string name="settings__input_feedback__title" comment="Title of Input Feedback screen">Äänet &amp; värinä</string>
     <string name="pref__input_feedback__group_audio__label" comment="Preference group title">Äänipalaute / äänet</string>
     <string name="pref__input_feedback__audio_enabled__label" comment="Preference title">Ota ääänipalaute käyttöön</string>

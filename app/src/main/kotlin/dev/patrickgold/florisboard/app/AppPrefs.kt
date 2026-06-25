@@ -109,15 +109,6 @@ abstract class FlorisPreferenceModel : PreferenceModel() {
             key = "clipboard__history_num_grid_columns_landscape",
             default = CLIPBOARD_HISTORY_NUM_GRID_COLUMNS_AUTO,
         )
-        @Composable
-        fun historyNumGridColumns(): PreferenceData<Int> {
-            val configuration = LocalConfiguration.current
-            return if (configuration.isOrientationPortrait()) {
-                historyNumGridColumnsPortrait
-            } else {
-                historyNumGridColumnsLandscape
-            }
-        }
         val historyAutoCleanOldEnabled = boolean(
             key = "clipboard__history_auto_clean_old_enabled",
             default = false,

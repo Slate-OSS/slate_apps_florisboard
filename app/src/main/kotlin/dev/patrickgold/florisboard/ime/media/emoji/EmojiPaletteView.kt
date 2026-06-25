@@ -80,7 +80,6 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.compose.ui.window.Popup
 import androidx.emoji2.text.EmojiCompat
-import androidx.emoji2.widget.EmojiTextView
 import dev.patrickgold.florisboard.R
 import dev.patrickgold.florisboard.app.FlorisPreferenceStore
 import dev.patrickgold.florisboard.editorInstance
@@ -639,7 +638,7 @@ fun EmojiText(
         AndroidView(
             modifier = modifier,
             factory = { context ->
-                EmojiTextView(context).also {
+                TextView(context).also {
                     it.setTextSize(TypedValue.COMPLEX_UNIT_SP, fontSize.value)
                     it.setTextColor(color.toArgb())
                 }

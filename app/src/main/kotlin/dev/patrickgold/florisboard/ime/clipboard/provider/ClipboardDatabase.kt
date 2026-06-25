@@ -151,6 +151,7 @@ data class ClipboardItem @OptIn(ExperimentalSerializationApi::class) constructor
                     var displayName = when (type) {
                         ItemType.IMAGE -> "Image"
                         ItemType.VIDEO -> "Video"
+                        ItemType.TEXT -> "Text"
                     }
                     tryOrNull {
                         context.contentResolver.query(dataItem.uri, MEDIA_PROJECTION)?.use { cursor ->
@@ -168,6 +169,7 @@ data class ClipboardItem @OptIn(ExperimentalSerializationApi::class) constructor
                     context.contentResolver.insert(when (type) {
                         ItemType.IMAGE -> ClipboardMediaProvider.IMAGE_CLIPS_URI
                         ItemType.VIDEO -> ClipboardMediaProvider.VIDEO_CLIPS_URI
+                        else -> ClipboardMediaProvider.IMAGE_CLIPS_URI // Should not happen
                     }, values)
                 }
             } else { null }

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2026 Slate. All Rights Reserved.
+  PROPRIETARY AND CONFIDENTIAL.
+-->
+<permissions>
+    <privapp-permissions package="dev.patrickgold.florisboard">
+        <!-- Add privileged permissions here if needed in the future -->
+    </privapp-permissions>
+</permissions>

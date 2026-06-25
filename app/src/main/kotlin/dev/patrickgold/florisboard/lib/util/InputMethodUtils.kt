@@ -69,9 +69,9 @@ object InputMethodUtils {
 
     @Composable
     fun observeIsFlorisboardEnabled(
-        context: Context = LocalContext.current.applicationContext,
         foregroundOnly: Boolean = false,
     ): State<Boolean> {
+        val context = LocalContext.current.applicationContext
         return if (AndroidVersion.ATLEAST_API34_U) {
             timedObserveIsFlorisBoardEnabled()
         } else {
@@ -85,9 +85,9 @@ object InputMethodUtils {
 
     @Composable
     fun observeIsFlorisboardSelected(
-        context: Context = LocalContext.current.applicationContext,
         foregroundOnly: Boolean = false,
     ): State<Boolean> {
+        val context = LocalContext.current.applicationContext
         return if (AndroidVersion.ATLEAST_API34_U) {
             timedObserveIsFlorisBoardSelected()
         } else {

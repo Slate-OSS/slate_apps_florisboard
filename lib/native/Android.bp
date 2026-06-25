@@ -1,0 +1,28 @@
+/*
+ * Copyright (C) 2026 Slate. All Rights Reserved.
+ * PROPRIETARY AND CONFIDENTIAL.
+ */
+
+// Consolidated Rust JNI library
+rust_ffi_shared {
+    name: "libfl_native_consolidated",
+    crate_name: "fl_native",
+    srcs: ["src/main/rust/src/lib.rs"],
+    edition: "2021",
+    rustlibs: [
+        "libjni",
+    ],
+    shared_libs: [
+        "liblog",
+    ],
+    prefer_rlib: true, // Crucial to embed libstd and avoid UnsatisfiedLinkError
+}
+
+// Kotlin part of the native library
+android_library {
+    name: "florisboard-lib-native",
+    srcs: ["src/main/kotlin/**/*.kt"],
+    manifest: "src/main/AndroidManifest.xml",
+    sdk_version: "system_current",
+    required: ["libfl_native_consolidated"],
+}

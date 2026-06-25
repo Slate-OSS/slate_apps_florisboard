@@ -264,11 +264,12 @@ private fun FileInfoView(
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp, vertical = 8.dp),
         ) {
+            val context = LocalContext.current
             val grayColor = LocalContentColor.current.copy(alpha = 0.56f)
             val ext = fileInfo.ext
             Row {
                 Text(
-                    text = Formatter.formatShortFileSize(LocalContext.current, fileInfo.size),
+                    text = Formatter.formatShortFileSize(context, fileInfo.size),
                     style = MaterialTheme.typography.bodyMedium,
                     color = grayColor,
                 )

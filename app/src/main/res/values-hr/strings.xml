@@ -158,12 +158,12 @@
     <string name="snygg__property_value__rectangle_shape">Oblik pravokutnika</string>
     <string name="snygg__property_value__circle_shape">Oblik kruga</string>
     <string name="snygg__property_value__cut_corner_shape_dp">Odreži oblik kuta (dp)</string>
-    <string name="snygg__property_value__cut_corner_shape_percent">Ukloni oblik ugla (%)</string>
+    <string name="snygg__property_value__cut_corner_shape_percent" formatted="false">Ukloni oblik ugla (%)</string>
     <string name="snygg__property_value__rounded_corner_shape_dp">Zaobljen oblik ugla (dp)</string>
-    <string name="snygg__property_value__rounded_corner_shape_percent">Zaobljeni oblik ugla (%)</string>
+    <string name="snygg__property_value__rounded_corner_shape_percent" formatted="false">Zaobljeni oblik ugla (%)</string>
     <string name="snygg__property_value__dp_size">Veličina (dp)</string>
     <string name="snygg__property_value__sp_size">Veličina (sp)</string>
-    <string name="snygg__property_value__percentage_size">Veličina (%)</string>
+    <string name="snygg__property_value__percentage_size" formatted="false">Veličina (%)</string>
     <string name="settings__input_feedback__title" comment="Title of Input Feedback screen">Zvuk &amp; Vibracija</string>
     <string name="pref__input_feedback__group_audio__label" comment="Preference group title">Povratna informacija zvukom / Zvukovi</string>
     <string name="pref__input_feedback__audio_enabled__label" comment="Preference title">Omogući zvučnu povratnu informaciju</string>

@@ -87,6 +87,7 @@ fun PreviewKeyboardField(
     val context = LocalContext.current
     val focusManager = LocalFocusManager.current
 
+    val textStyle = LocalTextStyle.current.copy(textDirection = TextDirection.ContentOrLtr)
     AnimatedVisibility(
         visible = controller.isVisible,
         enter = PreviewEnterTransition,
@@ -106,7 +107,7 @@ fun PreviewKeyboardField(
                     .focusRequester(controller.focusRequester),
                 value = controller.text,
                 onValueChange = { controller.text = it },
-                textStyle = LocalTextStyle.current.copy(textDirection = TextDirection.ContentOrLtr),
+                textStyle = textStyle,
                 placeholder = {
                     Text(
                         text = hint,
